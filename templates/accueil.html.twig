@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+    <img src="{{ asset('build/images/logo.png') }}" alt="logo" class="logo"/>
+<p>Date du jour : {{ "now"|date('d/m/Y') }}</p>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nom de la sortie</th>
+            <th scope="col">Date de la sortie</th>
+            <th scope="col">Clôture</th>
+            <th scope="col">Inscrits/Places</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Inscrit</th>
+            <th scope="col">Organisateur</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <button class="btn btn-outline-success my-2 my-sm-0"><a href="{{ path('create') }}" Créer une sortie</a</button>
+
+{% endblock %}

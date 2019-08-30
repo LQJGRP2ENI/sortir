@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}{% endblock %}
+
+{%  block main %}
+    <div id="formSortie">
+        {%for label, messages in app.flashes%}
+            {% for message in messages %}
+                <div class="alert - {{ label }}">
+
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+        {% endfor %}
+        <br>
+        <h1><b>Créer une sortie</b></h1>
+        <div class="col-4">
+        {{ form_start(formSortie) }}
+        <div class="form-group">
+            {{ form_row(formSortie.nom, {'attr': {'class': 'form-control', 'placeholder':"Nom de votre sortie"}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formSortie.dateHeureDebut, {'attr': {'class': 'form-control', 'placeholder':"Date et heure de début de votre sortie"}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formSortie.duree, {'attr': {'class': 'form-control', 'placeholder':"Durée de votre sortie"}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formSortie.dateLimiteInscription, {'attr': {'class': 'form-control', 'placeholder':"Date limite d'inscription"}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(formSortie.nbInscriptionMax, {'attr': {'class': 'form-control', 'placeholder':"Nombre maximum de participants"}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_row(formSortie.infosSortie, {'attr': {'class': 'form-control', 'placeholder':"Informations concernant la sortie"}}) }}
+        </div>
+
+
+        </div>
+
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="submit" class="btn btn-primary">Publier</button>
+        <button type="submit" class="btn btn-primary">Retour</button>
+            {{ form_end(formSortie) }}
+
+        </div>
+
+{%  endblock %}
