@@ -21,14 +21,17 @@ class SortieController extends Controller
 public function create(EntityManagerInterface $em, Request $request){
 
     $sortie = new Sortie();
+    $lieu = new Lieu();
 
 
     $formSortie = $this->createForm(SortieType::class, $sortie);
     $formSortie->handleRequest($request);
+    $formLieu = $this->createForm(LieuType::class, $lieu);
+    $formLieu->handleRequest($request);
    ;
 
 
-    if ($formSortie->isSubmitted() && $formSortie->isValid()) {
+    if ($formSortie->isSubmitted() && $formSortie->isValid() && $formLieu->isSubmitted() && $formLieu->isValid()) {
 
         $this->addFlash("success", "Votre sortie a bien été enregistrée !");
 
@@ -41,7 +44,7 @@ public function create(EntityManagerInterface $em, Request $request){
     }
 
     return $this->render('/sortie.html.twig',
-        ["formSortie" => $formSortie->createView()]);
+        ["formSortie" => $formSortie->createView(), "formLieu" => $formLieu->createView()]);
 
 }
 

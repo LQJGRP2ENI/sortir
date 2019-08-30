@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block main %}
-    <img src="{{ asset('build/images/logo.png') }}" alt="logo" class="logo"/>
+
 <p>Date du jour : {{ "now"|date('d/m/Y') }}</p>
 
     <table class="table">
@@ -27,6 +27,6 @@
 
         </tbody>
     </table>
-    <button class="btn btn-outline-success my-2 my-sm-0"><a href="{{ path('create') }}" Créer une sortie</a</button>
+    <a href="{{ path('create') }}"> <button type="submit" class="btn btn-primary"> Créer une sortie</button></a>
 
 {% endblock %}
