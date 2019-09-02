@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Modifier Profil {% endblock %}
+
+{% block main %}
+
+    <div id="formProfil">
+    {%for label, messages in app.flashes%}
+    {% for message in messages %}
+    <div class="alert - {{ label }}">
+
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {{ form_start (modifierForm) }}
+    <div class="form">
+
+        {{ form_widget (modifierForm)}}
+        <button type="submit">Confirmer</button>
+
+    </div>
+    {{ form_end (modifierForm) }}
+{% endblock %}
