@@ -1,7 +1,21 @@
 {% extends 'base.html.twig' %}
 {% block main %}
 
-<p>Date du jour : {{ "now"|date('d/m/Y') }}</p>
+<p class="date">Date du jour : {{ "now"|date('d/m/Y') }}</p>
+    <p class="part">Participant : {{ app.user.nom }}</p>
+
+    <h4>Filtrer les sorties</h4>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Choisir une ville
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
 
     <table class="table">
         <thead class="thead-dark">
@@ -17,16 +31,21 @@
         </tr>
         </thead>
         <tbody>
-
+        {% for s in sortie %}
         <tr>
-            <th></th>
+            <th>{{ s.nom }}</th>
+            <td>{{ s.date|date("d/m/Y h:m") }}</td>
+            <td>{{ s.fin|date("d/m/Y") }}</td>
             <td></td>
             <td></td>
             <td></td>
+            <td>{{ app.user.nom }}</td>
+            <td><a href="{{ path('afficherSortie', {id: s}) }}">Afficher</a> </td>
         </tr>
-
+        {% endfor %}
         </tbody>
-    </table>
-    <a href="{{ path('create') }}"> <button type="submit" class="btn btn-primary"> Créer une sortie</button></a>
 
+    </table>
+
+    <a href="{{ path('create') }}"> <button type="submit" class="btn btn-primary" id="bout"> Créer une sortie</button></a>
 {% endblock %}

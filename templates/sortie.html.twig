@@ -15,7 +15,7 @@
         {% endfor %}
         <br>
         <h1><b>Créer une sortie</b></h1>
-        <div class="col-4">
+        <div >
         {{ form_start(formSortie) }}
         <div class="form-group">
             {{ form_row(formSortie.nom, {'attr': {'class': 'form-control', 'placeholder':"Nom de votre sortie"}}) }}
@@ -36,27 +36,26 @@
         <div class="form-group">
             {{ form_row(formSortie.infosSortie, {'attr': {'class': 'form-control', 'placeholder':"Informations concernant la sortie"}}) }}
         </div>
-        </div>
-        <div class="col-4">
-            {{ form_start(formLieu) }}
-            <div class="form-group">
-                {{ form_row(formLieu.nom, {'attr': {'class': 'form-control', 'placeholder':"Nom du lieu "}}) }}
+            <div>
+            <select class=form-control>
+                <option value=un>Un</option>
+                <option value=deux>Deux</option>
+                <option value=trois>Trois</option>
+            </select>
+            </div><br>
+            <div>
+                <select class=form-control>
+                    <option value=un>Un</option>
+                    <option value=deux>Deux</option>
+                    <option value=trois>Trois</option>
+                </select>
             </div>
-            <div class="form-group">
-                {{ form_row(formLieu.rue, {'attr': {'class': 'form-control', 'placeholder':"Rue"}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(formLieu.latitude, {'attr': {'class': 'form-control', 'placeholder':"Latitude"}}) }}
-            </div>
-            <div class="form-group">
-                {{ form_row(formLieu.longitude, {'attr': {'class': 'form-control', 'placeholder':"Longitude"}}) }}
-            </div>
-
+        </div><br>
             <button type="submit" class="btn btn-primary">Enregistrer</button>
         <button type="submit" class="btn btn-primary">Publier</button>
         <button type="submit" class="btn btn-primary">Retour</button>
             {{ form_end(formSortie) }}
-            {{ form_end(formLieu) }}
+
 
         </div>
 

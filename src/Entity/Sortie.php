@@ -32,7 +32,7 @@ class Sortie
     private $duree;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $dateLimiteInscription;
 
@@ -47,11 +47,24 @@ class Sortie
     private $infosSortie;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ville")
+     */
+    private $ville;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Lieu")
      */
     private $lieu;
 
-    public function getLieu(): ?int{
+    public function getVille(){
+        return $this->ville;
+    }
+    public function setVille(string $ville): self{
+        $this->ville = $ville;
+        return $this;
+    }
+
+    public function getLieu(){
         return $this->lieu;
     }
     public function setLieu(string $lieu): self
@@ -61,12 +74,12 @@ class Sortie
         return $this;
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNom()
     {
         return $this->nom;
     }
@@ -78,7 +91,7 @@ class Sortie
         return $this;
     }
 
-    public function getDateHeureDebut(): ?\DateTimeInterface
+    public function getDateHeureDebut()
     {
         return $this->dateHeureDebut;
     }
@@ -90,7 +103,7 @@ class Sortie
         return $this;
     }
 
-    public function getDuree(): ?int
+    public function getDuree()
     {
         return $this->duree;
     }
@@ -102,7 +115,7 @@ class Sortie
         return $this;
     }
 
-    public function getDateLimiteInscription(): ?\DateTimeInterface
+    public function getDateLimiteInscription()
     {
         return $this->dateLimiteInscription;
     }
@@ -114,7 +127,7 @@ class Sortie
         return $this;
     }
 
-    public function getNbInscriptionMax(): ?int
+    public function getNbInscriptionMax()
     {
         return $this->nbInscriptionMax;
     }
@@ -126,7 +139,7 @@ class Sortie
         return $this;
     }
 
-    public function getInfosSortie(): ?string
+    public function getInfosSortie()
     {
         return $this->infosSortie;
     }

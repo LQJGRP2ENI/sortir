@@ -21,8 +21,8 @@ class SortieRepository extends ServiceEntityRepository
 
   public function afficherSortie(){
       $req = $this->createQueryBuilder('s')
-          ->select('(s.nom) as nom','(s.dateHeureDebut) as date');
+          ->select('(s.nom) as nom','(s.dateHeureDebut) as date', '(s.dateLimiteInscription) as fin');
           return $req->getQuery()->getResult();
-
   }
+
 }

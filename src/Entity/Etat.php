@@ -17,7 +17,7 @@ class Etat
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50, columnDefinition="enum('En cours', 'Ouvert', 'Fermé', 'En création')
+     * @ORM\Column(type="string", length=50)
      */
     private $libelle;
 

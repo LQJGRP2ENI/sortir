@@ -14,3 +14,33 @@ body {
     right: 1400px;
     top: 80px;
 }
+
+.date{
+    position: absolute;
+    left: 1400px;
+
+}
+.part{
+    position: absolute;
+    left: 1400px;
+    top: 80px;
+}
+
+#bout{
+    position: absolute;
+    top: 680px;
+    left: 30px;
+}
+
+.table{
+    position: absolute;
+    top: 400px;
+    left: 10px;
+
+}
+.rec{
+    position: absolute;
+    top: 200px;
+    left: 20px;
+;
+}

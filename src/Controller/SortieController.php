@@ -14,39 +14,36 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SortieController extends Controller
 {
-/**
- * @Route("create", name="create")
- */
+    /**
+     * @Route("create", name="create")
+     */
 
-public function create(EntityManagerInterface $em, Request $request){
+    public function create(EntityManagerInterface $em, Request $request)
+    {
 
-    $sortie = new Sortie();
-    $lieu = new Lieu();
+        $sortie = new Sortie();
 
+        $formSortie = $this->createForm(SortieType::class, $sortie);
+        $formSortie->handleRequest($request);
 
-    $formSortie = $this->createForm(SortieType::class, $sortie);
-    $formSortie->handleRequest($request);
-    $formLieu = $this->createForm(LieuType::class, $lieu);
-    $formLieu->handleRequest($request);
-   ;
+        if ($formSortie->isSubmitted() && $formSortie->isValid()) {
 
+            $this->addFlash("success", "Votre sortie a bien été enregistrée !");
 
-    if ($formSortie->isSubmitted() && $formSortie->isValid() && $formLieu->isSubmitted() && $formLieu->isValid()) {
+            // Enregistrement dans la BDD
+            $em->persist($sortie);
+            $em->flush();
 
-        $this->addFlash("success", "Votre sortie a bien été enregistrée !");
+            // Redirection
+            return $this->redirectToRoute("create");
+        }
 
-        // Enregistrement dans la BDD
-        $em->persist($sortie);
-        $em->flush();
-
-        // Redirection
-        return $this->redirectToRoute("create");
-    }
-
-    return $this->render('/sortie.html.twig',
-        ["formSortie" => $formSortie->createView(), "formLieu" => $formLieu->createView()]);
+return $this->render('/sortie.html.twig',
+["formSortie" => $formSortie->createView()]);
 
 }
+
+
 
 
 }
