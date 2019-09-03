@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="72ef6a52-5fb5-45e7-aacb-cd1263c736f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AfficherSortieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AfficherSortieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/SortieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SortieRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,17 +153,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\sortir\src\Form" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\sortir\templates" />
       <recent name="C:\wamp64\www\sortir\templates\ville" />
       <recent name="C:\wamp64\www\sortir\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\sortir\templates" />
+      <recent name="C:\wamp64\www\sortir\src\Controller" />
+      <recent name="C:\wamp64\www\sortir\src\Repository" />
+      <recent name="C:\wamp64\www\sortir\src\Form" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -189,7 +196,8 @@
       <workItem from="1566996787428" duration="2124000" />
       <workItem from="1567062480505" duration="13899000" />
       <workItem from="1567406890172" duration="24654000" />
-      <workItem from="1567436114379" duration="1375000" />
+      <workItem from="1567436114379" duration="3252000" />
+      <workItem from="1567493467641" duration="1902000" />
     </task>
     <servers />
   </component>

@@ -31,16 +31,16 @@
         </tr>
         </thead>
         <tbody>
-        {% for s in sortie %}
+        {% for Sortie in sortie %}
         <tr>
-            <th>{{ s.nom }}</th>
-            <td>{{ s.date|date("d/m/Y h:m") }}</td>
-            <td>{{ s.fin|date("d/m/Y") }}</td>
+            <th>{{ Sortie.nom }}</th>
+            <td>{{ Sortie.dateHeureDebut   |date("d/m/Y h:m") }}</td>
+            <td>{{ Sortie.dateLimiteInscription|date("d/m/Y") }}</td>
             <td></td>
             <td></td>
             <td></td>
             <td>{{ app.user.nom }}</td>
-            <td><a href="{{ path('afficherSortie', {id: s}) }}">Afficher</a> </td>
+            <td><a href="{{ path('afficher_sortie', {id: Sortie.id }) }}">Afficher</a> </td>
         </tr>
         {% endfor %}
         </tbody>

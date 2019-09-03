@@ -25,7 +25,8 @@ class AccueilController extends Controller
      */
     public function select(EntityManagerInterface $entityManager){
 
-        $sortie = $entityManager->getRepository('App:Sortie')->afficherSortie();
+        $sortie = $entityManager->getRepository('App:Sortie')->findAll();
+
 
         return $this->render('accueil.html.twig', ['sortie' => $sortie]);
     }
