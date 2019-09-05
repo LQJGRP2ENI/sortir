@@ -82,20 +82,6 @@ class User extends BaseUser
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Inscription", mappedBy="user")
-     */
-    private $inscription;
-
-
-    public function getSortieP(): ?int{
-        return $this->sortieP;
-    }
-    public function setSortieP(string $sortieP): self{
-        $this->sortieP = $sortieP;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getNom()
@@ -141,26 +127,5 @@ class User extends BaseUser
     public function setNom(string $nom)
     {
         $this->nom = $nom;
-    }
-
-
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->inscriptions = new ArrayCollection();
-        // your own logic
-    }
-
-    public function getInscription(): ?Inscription
-    {
-        return $this->inscription;
-    }
-
-    public function setInscription(?Inscription $inscription): self
-    {
-        $this->inscription = $inscription;
-
-        return $this;
     }
 }

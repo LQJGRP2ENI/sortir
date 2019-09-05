@@ -95,6 +95,74 @@ class SortieController extends Controller
      */
     public function Inscription($sortie_id, EntityManagerInterface $em)
     {
+        //Réunion infos
+        $currentUser = $em->getRepository('App:User')->find($this->getUser());
+        $sortie = $em->getRepository('App:Sortie')->find($sortie_id);
+
+        //Si date limite inscription dépassée : avertissement et redirection
+        if ($sortie->getdateLimiteInscription()<date("dd/mm/yyyy")){
+            $this->addFlash("warning", "Date limite d'inscription dépassée!");
+            return $this->redirectToRoute('accueil');
+        }
+        //Si le nombre d'inscrits est égal au nombre de places disponibles: redirection
+        if ($sortie->getUsers()->count()>=$sortie->getNbInscriptionMax()){
+            $this->addFlash("warning", "La sortie est complète!");
+            return $this->redirectToRoute('accueil');
+        }
+
+        //Vérifier si l'utilisateur est déjà inscrit
+        if ($sortie->getUsers()->contains($currentUser)){
+            $this->addFlash("warning", "Vous êtes déjà inscrit");
+            return $this->redirectToRoute('accueil');
+            //L'inscription est ignorée
+        } else {
+            //Si non: inscription
+            $sortie->inscription($currentUser);
+            //persist/flush
+            $em->persist($sortie);
+            $em->flush();
+            //redirection
+            $this->addFlash("success", "Vous avez bien été inscrit!");
+            return $this->redirectToRoute('accueil');
+        }
+    }
+
+    /**
+     * @Route("/desistement/{sortie_id}", name="desistement", methods={"GET"})
+     */
+    public function Desistement ($sortie_id, EntityManagerInterface $em)
+    {
+        //Réunion infos
+        $currentUserID = $this->getUser();
+        $sortie = $em->getRepository(Sortie::class)->find($sortie_id);
+        if ($sortie->getDateHeureDebut()<date("dd/mm/yyyy")) {
+            $this->addFlash("warning", "La sortie est déjà commencée!");
+            return $this->redirectToRoute('accueil');
+        } else {
+            //Recherche de la bonne inscription
+            $sortie = $em->getRepository('App:Sortie')->find($sortie_id);
+
+            if (!$sortie) {
+                $this->addFlash("warning", "Vous n'êtes pas inscrit à cette sortie!");
+                return $this->redirectToRoute('accueil');
+            }
+
+            $currentUser = $em->getRepository('App:User')->find($currentUserID);
+            if (!$currentUser) {
+                $this->addFlash("warning", "Vous n'êtes pas inscrit à cette sortie!");
+                return $this->redirectToRoute('accueil');
+            }
+            //Désistement
+            $sortie->desistement($currentUser);
+
+            //persist/flush
+            $em->persist($sortie);
+            $em->flush();
+
+            //redirection avec message Flash
+            $this->addFlash("success", "Vous vous êtes bien désisté!");
+            return $this->redirectToRoute('accueil');
+        }
     }
 }
 

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -56,7 +57,32 @@ class Sortie
      */
     private $lieu;
 
+    /**
+     * @return mixed
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 
+    /**
+     * @param mixed $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="User")
+     * @ORM\JoinTable(name="inscription")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getVille(){
         return $this->ville;
@@ -101,7 +127,6 @@ class Sortie
     public function setDateHeureDebut(\DateTimeInterface $dateHeureDebut): self
     {
         $this->dateHeureDebut = $dateHeureDebut;
-
         return $this;
     }
 
@@ -113,7 +138,6 @@ class Sortie
     public function setDuree(int $duree): self
     {
         $this->duree = $duree;
-
         return $this;
     }
 
@@ -125,7 +149,6 @@ class Sortie
     public function setDateLimiteInscription(\DateTimeInterface $dateLimiteInscription): self
     {
         $this->dateLimiteInscription = $dateLimiteInscription;
-
         return $this;
     }
 
@@ -137,7 +160,6 @@ class Sortie
     public function setNbInscriptionMax(int $nbInscriptionMax): self
     {
         $this->nbInscriptionMax = $nbInscriptionMax;
-
         return $this;
     }
 
@@ -149,9 +171,15 @@ class Sortie
     public function setInfosSortie(string $infosSortie): self
     {
         $this->infosSortie = $infosSortie;
-
         return $this;
     }
 
+    public function inscription(User $user)
+    {
+        $this->users[] = $user;
+    }
 
+    public function desistement(User $user){
+        $this->users->removeElement($user);
+    }
 }
