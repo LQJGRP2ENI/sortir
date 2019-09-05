@@ -4,27 +4,12 @@
     <list default="true" id="72ef6a52-5fb5-45e7-aacb-cd1263c736f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AfficherSortieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AfficherSortieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GererVilleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GererVilleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ModifierProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ModifierProfilController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SortieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/afficherProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/afficherProfilController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Etat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Lieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Inscription.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Sortie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sortie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ModifierType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ModifierType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/VilleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/VilleRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/InscriptionRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/afficherProfil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/afficherProfil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/afficherSortie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/afficherSortie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gererVille.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gererVille.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/modifierProfil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/modifierProfil.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sortie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sortie.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,6 +205,7 @@
       <workItem from="1567580053446" duration="18987000" />
       <workItem from="1567607080714" duration="3195000" />
       <workItem from="1567666700074" duration="443000" />
+      <workItem from="1567668480387" duration="12057000" />
     </task>
     <servers />
   </component>
