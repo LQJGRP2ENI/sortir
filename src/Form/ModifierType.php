@@ -34,21 +34,18 @@ class ModifierType extends AbstractType
             ])
             ->add('nom', TextType::class,[
                 "error_bubbling"=>true,
-                "disabled"=>true,
                 "trim"=>true,
                 "label"=>"Votre nom",
                 "required"=>false
             ])
             ->add('prenom', TextType::class,[
                 "error_bubbling"=>true,
-                "disabled"=>true,
                 "trim"=>true,
                 "label"=>"Votre prénom",
                 "required"=>false
             ])
             ->add('telephone', TextType::class,[
                 "error_bubbling"=>true,
-                "disabled"=>true,
                 "trim"=>true,
                 "label"=>"Votre numéro de téléphone",
                 "required"=>false

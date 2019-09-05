@@ -16,16 +16,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class GererVilleController extends Controller{
 
         /**
-         * @Route("gererVille", name="form_create")
+         * @Route("gererVille", name="creerVille", methods={"GET", "POST"})
          */
-        public function create(EntityManagerInterface $entityManager, Request $request)
+        public function create(EntityManagerInterface $em, Request $request)
     {
 
-        $ville = new Ville();
-
-        $formVille = $this->createForm(VilleType::class, $ville);
-        $ville = $entityManager->getRepository('App:Ville')->afficherVille();
-
+        $newVille = new Ville();
+        $villes = $em->getRepository('App:Ville')->findAll();
+        $formVille = $this->createForm(VilleType::class, $newVille);
         $formVille->handleRequest($request);
 
         if ($formVille->isSubmitted() && $formVille->isValid()) {
@@ -33,16 +31,25 @@ class GererVilleController extends Controller{
             $this->addFlash("success", "Votre ville a bien été enregistrée !");
 
             // Enregistrement dans la BDD
-            $entityManager->persist($ville);
-            $entityManager->flush();
+            $em->persist($newVille);
+            $em->flush();
 
             // Redirection
-            return $this->redirectToRoute("form_create");
+            return $this->redirectToRoute("creerVille", [
+                'villes' => $villes,
+                'form' => $formVille->createView(),
+            ]);
         }
 
-        return $this->render('gererVille.html.twig', ["formVille" => $formVille->createView(), "ville" => $ville]);
+        return $this->render('gererVille.html.twig',  [
+            "formVille" => $formVille->createView(),
+            'villes' => $villes,
+            ]);
 
     }
+
+
+
 
 
 

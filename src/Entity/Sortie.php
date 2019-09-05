@@ -11,7 +11,7 @@ class Sortie
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -55,6 +55,8 @@ class Sortie
      * @ORM\ManyToOne(targetEntity="App\Entity\Lieu")
      */
     private $lieu;
+
+
 
     public function getVille(){
         return $this->ville;
@@ -150,7 +152,6 @@ class Sortie
 
         return $this;
     }
-
 
 
 }

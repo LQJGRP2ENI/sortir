@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ModifierProfilController extends Controller
 {
     /**
-     * @Route("/modifierProfil", name="modifierProfil", methods={"GET", "POST"})
+     * @Route("modifierProfil", name="modifierProfil", methods={"GET", "POST"})
      */
     public function modifier (Request $request, EntityManagerInterface $em){
         $currentUser = $this -> getUser();

@@ -19,9 +19,5 @@ class VilleRepository extends ServiceEntityRepository
         parent::__construct($registry, Ville::class);
     }
 
-    public function afficherVille(){
-        $req = $this->createQueryBuilder('v')
-            ->select('(v.nom) as nom','(v.codePostal) as cp');
-        return $req->getQuery()->getResult();
-    }
+
 }

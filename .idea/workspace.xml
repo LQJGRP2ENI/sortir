@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ef6a52-5fb5-45e7-aacb-cd1263c736f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AfficherSortieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AfficherSortieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SortieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SortieRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GererVilleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GererVilleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ModifierProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ModifierProfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SortieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/afficherProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/afficherProfilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Etat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Etat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lieu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lieu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Sortie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sortie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Ville.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ville.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ModifierType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ModifierType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/VilleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/VilleRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/afficherProfil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/afficherProfil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/afficherSortie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/afficherSortie.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gererVille.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gererVille.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/modifierProfil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/modifierProfil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sortie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sortie.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,20 +171,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\sortir\templates" />
-      <recent name="C:\wamp64\www\sortir\templates\ville" />
-      <recent name="C:\wamp64\www\sortir\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\sortir\assets\images" />
       <recent name="C:\wamp64\www\sortir\templates" />
       <recent name="C:\wamp64\www\sortir\src\Controller" />
       <recent name="C:\wamp64\www\sortir\src\Repository" />
       <recent name="C:\wamp64\www\sortir\src\Form" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\sortir\templates" />
+      <recent name="C:\wamp64\www\sortir\templates\ville" />
+      <recent name="C:\wamp64\www\sortir\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -197,7 +216,10 @@
       <workItem from="1567062480505" duration="13899000" />
       <workItem from="1567406890172" duration="24654000" />
       <workItem from="1567436114379" duration="3252000" />
-      <workItem from="1567493467641" duration="1902000" />
+      <workItem from="1567493467641" duration="24761000" />
+      <workItem from="1567580053446" duration="18987000" />
+      <workItem from="1567607080714" duration="3195000" />
+      <workItem from="1567666700074" duration="443000" />
     </task>
     <servers />
   </component>

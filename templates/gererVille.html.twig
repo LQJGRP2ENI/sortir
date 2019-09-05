@@ -7,7 +7,8 @@
     <input class="form-control" type="text" placeholder="Rechercher une ville..." aria-label="Search">
         <button type="submit" class="btn btn-primary">Rechercher</button>
     </div>
-    <table class="table">
+
+    <table class="table table-bordered">
         <thead class="thead-dark">
         <tr>
             <th scope="col">Ville</th>
@@ -17,20 +18,21 @@
         </tr>
         </thead>
         <tbody>
-        {% for v in ville %}
+        {% for ville in villes %}
             <tr>
-                <th>{{ v.nom }}</th>
-                <td>{{ v.cp }}</td>
+                <th class="table-light">{{ ville.nom }}</th>
+                <td class="table-light">{{ ville.codePostal }}</td>
             </tr>
         {% endfor %}
         <tr>
 
             {{ form_start(formVille) }}
-            <td>{{ form_row(formVille.nom) }}</td>
-            <td>{{ form_row(formVille.codePostal) }}</td>
-        <td> <button type="submit" class="btn btn-primary">Ajouter</button></td>
+            <td class="table-light">{{ form_row(formVille.nom) }}</td>
+            <td class="table-light">{{ form_row(formVille.codePostal) }}</td>
+        <td class="table-light"> <button type="submit" class="btn btn-primary">Ajouter</button></td>
             {{ form_end(formVille) }}
 
         </tr>
+        </tbody>
     </table>
 {% endblock %}

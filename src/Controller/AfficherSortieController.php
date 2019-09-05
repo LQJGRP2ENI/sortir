@@ -16,7 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AfficherSortieController extends Controller
 {
-
     /**
      * @Route("afficherSortie/{id}", name="afficher_sortie", methods={"GET", "POST"})
      */
@@ -28,7 +27,7 @@ class AfficherSortieController extends Controller
            ->getRepository(Sortie::class)
            ->find($id);
 
-       return $this->render('afficherSortie', ["sortie" => $sortie]);
+       return $this->render('afficherSortie.html.twig', ["sortie" => $sortie]);
 
     }
 

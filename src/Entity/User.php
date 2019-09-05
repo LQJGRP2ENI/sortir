@@ -3,6 +3,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -78,10 +80,12 @@ class User extends BaseUser
         $this->sortie = $sortie;
         return $this;
     }
+
     /**
-     * ORM\ManyTOMany("targetEntity="App\Entity\Sortie")
+     * @ORM\OneToMany(targetEntity="App\Entity\Inscription", mappedBy="user")
      */
-    private $sortieP;
+    private $inscription;
+
 
     public function getSortieP(): ?int{
         return $this->sortieP;
@@ -144,6 +148,19 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->inscriptions = new ArrayCollection();
         // your own logic
+    }
+
+    public function getInscription(): ?Inscription
+    {
+        return $this->inscription;
+    }
+
+    public function setInscription(?Inscription $inscription): self
+    {
+        $this->inscription = $inscription;
+
+        return $this;
     }
 }

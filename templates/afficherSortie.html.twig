@@ -4,8 +4,31 @@
 <h1>Afficher une sortie</h1>
 
     <div class="infoSortie">
-        {{ sortie.nom }}
+        {{ sortie.nom }}<br>
+        {{ sortie.dateHeureDebut |date("d/m/Y h:m") }}<br>
+        {{ sortie.dateLimiteInscription |date("d/m/Y") }}<br>
+        {{ sortie.nbInscriptionMax }}<br>
+        {{ sortie.duree }}<br>
+        {{ sortie.infosSortie }}<br>
 
     </div>
+
+    <h3>Liste des participants inscrits</h3>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+        <tr>
+            <th scope="col">Pseudo</th>
+            <th scope="col">Nom</th>
+        </tr>
+        </thead>
+            {# {% for User in sortie.userP %}
+            <tr>
+                <th class="table-light">{{ User.username }}</th>
+                <td class="table-light">{{ User.nom }}</td>
+            </tr>
+                
+            {% endfor %} #}
+        </table>
+
 
 {% endblock %}

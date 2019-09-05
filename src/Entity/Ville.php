@@ -11,7 +11,7 @@ class Ville
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -26,12 +26,12 @@ class Ville
      */
     private $codePostal;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNom()
     {
         return $this->nom;
     }
@@ -43,7 +43,7 @@ class Ville
         return $this;
     }
 
-    public function getCodePostal(): ?string
+    public function getCodePostal()
     {
         return $this->codePostal;
     }
