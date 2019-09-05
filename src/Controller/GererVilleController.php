@@ -48,6 +48,50 @@ class GererVilleController extends Controller{
 
     }
 
+    /**
+     * @Route("modifierVille/{id}", name="modifierVille", methods={"GET", "POST"})
+     */
+    public function update(Request $request, EntityManagerInterface $entityManager, $id)
+    {
+
+        $ville = $entityManager->getRepository('App:Ville')->find($id);
+        $formVilles = $this->createForm(VilleType::class, $ville);
+        $formVilles->handleRequest($request);
+
+        if ($formVilles->isSubmitted() && $formVilles->isValid()) {
+            $entityManager->persist($ville);
+            $entityManager->flush();
+            $this->addFlash('success', 'La ville a bien été modifiée.');
+
+            return $this->redirectToRoute('modifierVille', array(
+                'id' => $id));
+        }
+
+        return $this->render('modifierVille.html.twig', [
+            'ville' => $ville,
+            'formVilles' => $formVilles->createView()
+        ]);
+    }
+    /**
+     * @Route("/deleteVille/{id}", name="supprimerVille", methods={"GET"})
+     */
+    public function delete($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('App:Ville')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Ville entity.');
+        }
+
+        $em->remove($entity);
+        $em->flush();
+
+
+        return $this->redirectToRoute('creerVille');
+    }
+
+
 
 
 

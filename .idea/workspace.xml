@@ -2,14 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ef6a52-5fb5-45e7-aacb-cd1263c736f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
+=======
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GererVilleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GererVilleController.php" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/Controller/SortieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SortieController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Inscription.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Sortie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Sortie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/Repository/InscriptionRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/Form/SortieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SortieType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/InscriptionRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accueil.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gererVille.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gererVille.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sortie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sortie.html.twig" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,8 +216,12 @@
       <workItem from="1567493467641" duration="24761000" />
       <workItem from="1567580053446" duration="18987000" />
       <workItem from="1567607080714" duration="3195000" />
+<<<<<<< Updated upstream
       <workItem from="1567666700074" duration="443000" />
       <workItem from="1567668480387" duration="12057000" />
+=======
+      <workItem from="1567666700074" duration="15815000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}{% endblock %}
 {% block main %}
+
+<div id="formVille">
+    {%for label, messages in app.flashes%}
+        {% for message in messages %}
+            <div class="alert - {{ label }}">
+
+                {{ message }}
+            </div>
+
+        {% endfor %}
+    {% endfor %}
     <h1>Gérer les villes</h1>
-    <div class="rec">
-<h3>Filtrer les villes</h3>
-    <input class="form-control" type="text" placeholder="Rechercher une ville..." aria-label="Search">
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-    </div>
+
 
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -22,6 +29,8 @@
             <tr>
                 <th class="table-light">{{ ville.nom }}</th>
                 <td class="table-light">{{ ville.codePostal }}</td>
+                <td class="table-light"><a href="{{ path('modifierVille', {id: ville.id}) }}"><button type="submit" class="btn btn-warning">Modifier</button></a>
+                    <a href="{{ path('supprimerVille', {id: ville.id}) }}"><button type="button" class="btn btn-danger">Supprimer</button></a><br></td>
             </tr>
         {% endfor %}
         <tr>

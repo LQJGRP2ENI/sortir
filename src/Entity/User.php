@@ -81,6 +81,7 @@ class User extends BaseUser
         return $this;
     }
 
+
     /**
      * @return string
      */
@@ -128,4 +129,5 @@ class User extends BaseUser
     {
         $this->nom = $nom;
     }
+
 }

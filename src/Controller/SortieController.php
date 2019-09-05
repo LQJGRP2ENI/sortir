@@ -4,10 +4,11 @@
 namespace App\Controller;
 
 
-use App\Entity\Inscription;
-use App\Entity\Lieu;
+
+use App\Entity\Archive;
 use App\Entity\Sortie;
-use App\Entity\User;
+
+use App\Form\ArchiveType;
 use App\Form\SortieType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -25,6 +26,11 @@ class SortieController extends Controller
     {
 
         $sortie = new Sortie();
+        $sortie->setDateHeureDebut(new \Datetime());
+        $sortie->setDateLimiteInscription(new \Datetime());
+        $archive = new Archive();
+
+        $sortie->setArchive($archive);
 
         $formSortie = $this->createForm(SortieType::class, $sortie);
         $formSortie->handleRequest($request);
@@ -35,10 +41,11 @@ class SortieController extends Controller
 
             // Enregistrement dans la BDD
             $em->persist($sortie);
+            $em->persist($archive);
             $em->flush();
 
             // Redirection
-            return $this->redirectToRoute("create");
+            return $this->redirectToRoute("accueil");
         }
 
         return $this->render('/sortie.html.twig',
@@ -72,24 +79,38 @@ class SortieController extends Controller
     }
 
     /**
-     * @Route("/delete/{id}", name="supprimerSortie", methods={"GET"})
+     * @Route("/delete/{id}", name="annulerSortie", methods={"GET", "POST"})
      */
-    public function delete($id)
+    public function delete(Request $request, EntityManagerInterface $em, $id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $entity = $em->getRepository('App:Sortie')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Sortie entity.');
+        //Récupération archive
+        $sortie = $em->getRepository('App:Sortie')->find($id);
+        $archive = $em->getRepository('App:Archive')->find($sortie->getArchive()->getId());
+
+        //Transmission des valeurs de sortie à archive
+        $archive->setNom($sortie->getNom());
+        $archive->setDateHeureDebut($sortie->getDateHeureDebut());
+
+        //Gestion formulaire
+        $formMotif = $this->createForm(ArchiveType::class, $archive);
+        $formMotif->handleRequest($request);
+
+        if ($formMotif->isSubmitted()&&$formMotif->isValid()){
+            $em->persist($archive);
+            $em->persist($sortie);
+            $em->remove($sortie);
+            $em->flush();
+
+            $this->addFlash('success', 'La sortie a bien été supprimée.');
+            return $this->redirectToRoute('accueil');
         }
+        return $this->render('annulerSortie.html.twig', [
+            'sortie' => $sortie,
+            'formMotif' => $formMotif->createView()
+        ]);
 
-        $em->remove($entity);
-        $em->flush();
-
-
-        return $this->redirectToRoute('accueil');
     }
-
     /**
      * @Route("/addInscription/{sortie_id}", name="addInscription", methods={"GET"})
      */
@@ -164,5 +185,6 @@ class SortieController extends Controller
             return $this->redirectToRoute('accueil');
         }
     }
+
 }
 

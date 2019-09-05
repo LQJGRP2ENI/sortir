@@ -56,6 +56,26 @@ class Sortie
      * @ORM\ManyToOne(targetEntity="App\Entity\Lieu")
      */
     private $lieu;
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Archive")
+     */
+    private $archive;
+
+    /**
+     * @return mixed
+     */
+    public function getArchive()
+    {
+        return $this->archive;
+    }
+
+    /**
+     * @param mixed $archive
+     */
+    public function setArchive($archive)
+    {
+        $this->archive = $archive;
+    }
 
     /**
      * @return mixed
